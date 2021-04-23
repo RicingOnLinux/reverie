@@ -76,7 +76,7 @@ h2 {
     padding: 0;
     word-wrap: normal; // Safari Bug
   }
-
+}
   @media (min-width: 769px){
 	.post h2::before, .post h2::after {
 	    content: "";
