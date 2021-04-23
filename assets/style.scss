@@ -63,7 +63,21 @@ h2 {
   font-size: 24px;
 }
 
-@media (min-width: 769px){
+.highlight {
+  margin-bottom: 10px;
+  border-radius: 8px; !important 
+  pre {
+    font-size: 14px;
+    line-height: 1.5;
+    color: #555;
+    background: transparent;
+    border: 0;
+    margin: 0;
+    padding: 0;
+    word-wrap: normal; // Safari Bug
+  }
+
+  @media (min-width: 769px){
 	.post h2::before, .post h2::after {
 	    content: "";
 	    display: inline-block;
@@ -89,6 +103,8 @@ p {
 }
 
 table {
+    *border-collapse: collapse; /* IE7 and lower */
+    border-spacing: 0;
 	padding: 0;
 }
 
@@ -118,12 +134,20 @@ table tr td {
 	padding: 6px 13px;
 }
 
-table tr th :first-child,
-table tr td :first-child {
-	margin-top: 0;
+table tr th :first-child {
+    margin-top: 0;
+    border-radius: 6px 0 0 0;
+}
+table tr td :first-child {	
+    margin-top: 0;
 }
 
-table tr th :last-child,
+table tr th :last-child {
+    border-radius: 0 6px 0 0;
+}
+table   th:only-child{
+    border-radius: 6px 6px 0 0;
+  }
 table tr td :last-child {
 	margin-bottom: 0;
 }
